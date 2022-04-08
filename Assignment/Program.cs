@@ -1,6 +1,13 @@
-﻿Console.WriteLine("Hello");
+﻿
+// make this more efficient plz
+
+// try converting the integers straight to int[] while reading the file
+
 
 // Store the contents of 'File' into string[] strNumber
+
+using Assignment;
+
 string[] strNumbers1 = File.ReadAllLines("../../../../Files Go HERE/Share_1_256.txt");
 string[] strNumbers2 = File.ReadAllLines("../../../../Files Go HERE/Share_2_256.txt");
 string[] strNumbers3= File.ReadAllLines("../../../../Files Go HERE/Share_3_256.txt");
@@ -27,3 +34,31 @@ foreach (string num in strNumbers3)
     integerNumbers3.Add(Int32.Parse(num));
 }
 
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////
+foreach (int num in integerNumbers2)
+{
+    Console.Write(num + " ");
+}
+
+Console.WriteLine("\n");
+
+List<int> sorted1 = BubbleSort.Bubblesort(integerNumbers2);
+
+foreach (int num in sorted1)
+{
+    Console.Write(num + " ");
+}
+
+Console.WriteLine("\n");
+
+List<int> sorted2 = InsertionSort.Insertionsort(integerNumbers2);
+
+foreach (int num in sorted2)
+{
+    Console.Write(num + " ");
+}
