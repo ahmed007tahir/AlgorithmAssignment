@@ -69,7 +69,7 @@ Console.WriteLine("\n");
 
 List<int> sorted3 = InsertionSort.InsertionSortAscending(integerNumbers2);
 
-foreach (int num in sorted1)
+foreach (int num in sorted3)
 {
     Console.Write(num + " ");
 }
@@ -78,7 +78,29 @@ Console.WriteLine("\n");
 
 List<int> sorted4 = InsertionSort.InsertionSortDescending(integerNumbers2);
 
-foreach (int num in sorted2)
+foreach (int num in sorted4)
+{
+    Console.Write(num + " ");
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+Console.WriteLine("\n");
+
+List<int> sorted5 = MergeSort.MergeSortAscending(integerNumbers2);
+
+foreach (int num in sorted5)
+{
+    Console.Write(num + " ");
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+Console.WriteLine("\n");
+
+List<int> sorted6 = MergeSort.MergeSortDescending(integerNumbers2);
+
+foreach (int num in sorted6)
 {
     Console.Write(num + " ");
 }
