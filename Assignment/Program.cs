@@ -47,7 +47,7 @@ foreach (int num in integerNumbers2)
 
 Console.WriteLine("\n");
 
-List<int> sorted1 = BubbleSort.Bubblesort(integerNumbers2);
+List<int> sorted1 = BubbleSort.BubbleSortAscending(integerNumbers2);
 
 foreach (int num in sorted1)
 {
@@ -56,7 +56,27 @@ foreach (int num in sorted1)
 
 Console.WriteLine("\n");
 
-List<int> sorted2 = InsertionSort.Insertionsort(integerNumbers2);
+List<int> sorted2 = BubbleSort.BubbleSortDescending(integerNumbers2);
+
+foreach (int num in sorted2)
+{
+    Console.Write(num + " ");
+}
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
+Console.WriteLine("\n");
+
+List<int> sorted3 = InsertionSort.InsertionSortAscending(integerNumbers2);
+
+foreach (int num in sorted1)
+{
+    Console.Write(num + " ");
+}
+
+Console.WriteLine("\n");
+
+List<int> sorted4 = InsertionSort.InsertionSortDescending(integerNumbers2);
 
 foreach (int num in sorted2)
 {
