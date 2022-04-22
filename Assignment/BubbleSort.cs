@@ -2,7 +2,7 @@ namespace Assignment;
 
 public class BubbleSort
 {
-    public static List<int> BubbleSortAscending(List<int> list)
+    public static void BubbleSortAscending(List<int> list)
     {
         for (int j = 0; j <= list.Count-2; j++)
         {
@@ -14,10 +14,9 @@ public class BubbleSort
                 }
             }
         }
-        return list;
     }
     
-    public static List<int> BubbleSortDescending(List<int> list)
+    public static void BubbleSortDescending(List<int> list)
     {
         for (int j = 0; j <= list.Count-2; j++)
         {
@@ -29,6 +28,5 @@ public class BubbleSort
                 }
             }
         }
-        return list;
     }
 }
