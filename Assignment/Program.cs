@@ -45,16 +45,18 @@ foreach (string num in strNumbers3)
 
  Console.WriteLine("\n");
 
- List<int> sorted1 = BubbleSort.BubbleSortAscending(integerNumbers2);
+ BubbleSort.BubbleSortAscending(integerNumbers1);
 
- foreach (int num in sorted1)
+ foreach (int num in integerNumbers1)
  {
-     Console.Write(num + "(" + counter + ") ");
+    Console.Write(num + "(" + counter + ") ");
     counter++;
  }
 
-Console.WriteLine(" ");
-Console.WriteLine(BinarySearch.Binary_Search(sorted1, 102));
+Console.WriteLine("\n");
+
+Console.WriteLine(LinearSearch.Linear_Search(integerNumbers1, 102));
+Console.WriteLine(BinarySearch.Binary_Search(integerNumbers1, 102));
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 

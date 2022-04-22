@@ -4,12 +4,11 @@ public class LinearSearch
 {
     public static int Linear_Search(List<int> list, int value)
     {
-        int difference = list[0];
         int index = 0;
-
+        int difference = 0;
         for (int i=0; i < list.Count; i++)
         {
-            if (Math.Abs(value-list[i]) < difference)
+            if (Math.Abs(value-list[i]) <= difference)
             {
                 difference = Math.Abs(value-list[i]);
                 index = i;
@@ -20,5 +19,5 @@ public class LinearSearch
 }
 
 // for each value in the list,
-// we take the difference bw the list item and desired numcer
+// we take the difference bw the list item and desired number
 // return index of value with the smallest difference
