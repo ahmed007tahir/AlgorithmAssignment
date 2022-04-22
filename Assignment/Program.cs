@@ -36,14 +36,15 @@ foreach (string num in strNumbers3)
 
  ///////////////////////////////////////////////////////////////////////////////////////////
  
- foreach (int num in integerNumbers2)
+ foreach (int num in integerNumbers1)
  {
      Console.Write(num + " ");
  }
 
  Console.WriteLine("\n");
 
- QuickSort.Quick_Sort(integerNumbers1);
+ QuickSort.Quick_Sort(integerNumbers1,0,integerNumbers1.Count-1);
+
 
  foreach (int num in integerNumbers1)
  {

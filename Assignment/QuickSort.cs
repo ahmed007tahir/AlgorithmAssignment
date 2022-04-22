@@ -2,50 +2,33 @@ namespace Assignment;
 
 public class QuickSort
 {
-    public static void Quick_Sort(List<int> list, int left, int right) 
+      public static void Quick_Sort(List<int> list, int start, int end)
+    {
+        if (start < end)
         {
-            if (left < right)
-            {
-                int pivot = Partition(list, left, right);
-
-                if (pivot > 1) {
-                    Quick_Sort(list, left, pivot - 1);
-                }
-                if (pivot + 1 < right) {
-                    Quick_Sort(list, pivot + 1, right);
-                }
-            }
-        
+            int i = Partition(list, start, end);
+    
+            Quick_Sort(list, start, i - 1);
+            Quick_Sort(list, i + 1, end);
         }
-
-        private static int Partition(List<int> list, int left, int right)
+    }
+ 
+    private static int Partition(List<int> list, int start, int end)
+    {
+    int p = list[end];
+    int i = start - 1;
+ 
+    for (int j = start; j <= end - 1; j++)
+    {
+        if (list[j] <= p)
         {
-            int pivot = list[left];
-            while (true) 
-            {
-
-                while (list[left] < pivot) 
-                {
-                    left++;
-                }
-
-                while (list[right] > pivot)
-                {
-                    right--;
-                }
-
-                if (left < right)
-                {
-                    if (list[left] == list[right]) return right;
-
-                    int temp = list[left];
-                    list[left] = list[right];
-                    list[right] = temp;
-                }
-                else 
-                {
-                    return right;
-                }
-            }
+            i++;
+            (list[i] , list[j]) = (list[j] , list[i]);
         }
+    }
+
+    (list[i + 1] , list[end]) = (list[end] , list[i + 1]);
+
+    return i + 1;
+    }
 }
