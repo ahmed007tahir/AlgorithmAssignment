@@ -34,8 +34,6 @@ foreach (string num in strNumbers3)
     integerNumbers3.Add(Int32.Parse(num));
 }
 
-
-
  ///////////////////////////////////////////////////////////////////////////////////////////
  
  foreach (int num in integerNumbers2)
@@ -45,7 +43,7 @@ foreach (string num in strNumbers3)
 
  Console.WriteLine("\n");
 
- BubbleSort.BubbleSortAscending(integerNumbers1);
+ QuickSort.Quick_Sort(integerNumbers1);
 
  foreach (int num in integerNumbers1)
  {
@@ -55,8 +53,8 @@ foreach (string num in strNumbers3)
 
 Console.WriteLine("\n");
 
-Console.WriteLine(LinearSearch.Linear_Search(integerNumbers1, 102));
-Console.WriteLine(BinarySearch.Binary_Search(integerNumbers1, 102));
+Console.WriteLine(LinearSearch.Linear_Search(integerNumbers1, 78));
+Console.WriteLine(BinarySearch.Binary_Search(integerNumbers1, 78));
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
