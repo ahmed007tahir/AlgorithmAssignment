@@ -9,110 +9,56 @@ List<int> intShare_1_2048 = ReadFile.Read_File("Share_1_2048.txt");
 List<int> intShare_2_2048 = ReadFile.Read_File("Share_2_2048.txt");
 List<int> intShare_3_2048 = ReadFile.Read_File("Share_3_2048.txt");
 
-
-int counter = 0;
-// // iterate through the strNumber list and assign each value to the list integerNumber
-// foreach (string num in strNumbers1)
-// {
-//     integerNumbers1.Add(Int32.Parse(num));
-// }
-
-// foreach (string num in strNumbers2)
-// {
-//     integerNumbers2.Add(Int32.Parse(num));
-// }
-
-// foreach (string num in strNumbers3)
-// {
-//     integerNumbers3.Add(Int32.Parse(num));
-// }
-
-//  ///////////////////////////////////////////////////////////////////////////////////////////
- 
-//  foreach (int num in integerNumbers1)
-//  {
-//      Console.Write(num + " ");
-//  }
-
-//  Console.WriteLine("\n");
-
-//  QuickSort.Quick_Sort_Descending(integerNumbers1,0,integerNumbers1.Count-1);
-
-//  foreach (int num in test)
-//  {
-//     Console.Write(num + " ");
-//  }
-
-
-//  foreach (int num in intShare_1_256)
-//  {
-//     Console.Write(num + "(" + counter + ") ");
-//     counter++;
-//  }
-
-// Console.WriteLine("\n");
-
-// Console.WriteLine(LinearSearch.Linear_Search(integerNumbers1, 32));
-// Console.WriteLine(BinarySearch.Binary_Search(integerNumbers1, 105));
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-// Console.WriteLine("\n");
-
-BubbleSort.BubbleSortDescending(intShare_1_256);
-List<int> test = ReadFile.Get_Value(intShare_1_256);
-
-foreach (int num in test)
+while (true)
 {
-    Console.Write(num + " ");
+    
+
+    Console.WriteLine(@"
+    Please choose the file you wish to search:
+    a) Share_1_256.txt      d) Share_1_2048.txt
+    b) Share_2_256.txt      e) Share_2_2048.txt
+    c) Share_3_256.txt      f) Share_3_2048.txt
+
+    Your Response: ");
+
+    string user_input = Console.ReadLine();
+
+    switch (user_input)
+    {
+        case "a":
+        {
+            Console.WriteLine("You picked a");
+            break;
+        }
+        case "b":
+        {
+            Console.WriteLine("You picked b");
+            break;
+        }
+        case "c":
+        {
+            Console.WriteLine("You picked c");
+            break;
+        }
+        case "d":
+        {
+            Console.WriteLine("You picked d");
+            break;
+        }
+        case "e":
+        {
+            Console.WriteLine("You picked e");
+            break;
+        }
+        case "f":
+        {
+            Console.WriteLine("You picked f");
+            break;
+        }
+        default:
+        {
+            Console.WriteLine("Please try again!");
+            break;
+        }
+    }
 }
-
-// ///////////////////////////////////////////////////////////////////////////////////////////
-
-// Console.WriteLine("\n");
-
-// List<int> sorted3 = InsertionSort.InsertionSortAscending(integerNumbers2);
-
-// foreach (int num in sorted3)
-// {
-//     Console.Write(num + " ");
-// }
-
-// Console.WriteLine("\n");
-
-// List<int> sorted4 = InsertionSort.InsertionSortDescending(integerNumbers2);
-
-// foreach (int num in sorted4)
-// {
-//     Console.Write(num + " ");
-// }
-
-// ///////////////////////////////////////////////////////////////////////////////////////////
-
-// Console.WriteLine("\n");
-
-// List<int> sorted5 = MergeSort.MergeSortAscending(integerNumbers2);
-
-// foreach (int num in sorted5)
-// {
-//     Console.Write(num + " ");
-// }
-
-// ///////////////////////////////////////////////////////////////////////////////////////////
-
-// Console.WriteLine("\n");
-
-// List<int> sorted6 = MergeSort.MergeSortDescending(integerNumbers2);
-
-// foreach (int num in sorted6)
-// {
-//     Console.Write(num + " ");
-// }
-
-///////////////////////////////////////////////////////////////////////////////////////////
-
-/*Console.WriteLine("\n");
-Console.WriteLine(LinearSearch.Linear_Search(integerNumbers1,75));
-*/
