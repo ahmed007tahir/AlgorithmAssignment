@@ -14,22 +14,26 @@ public class ReadFile
 
         return intList;
     }
+
+    public static List<int> Get_Value(List<int> list)
+    {
+        List<int> values = new List<int>();
+
+        if (list.Count == 256)
+        {
+            for(int i = 0; i < list.Count; i = i+10)
+            {
+                values.Add(list[i]);
+            }
+        }
+        else if (list.Count == 2048)
+        {
+            for(int i = 0; i < list.Count; i = i+50)
+            {
+                values.Add(list[i]);
+            }
+        }
+        return values;
+    }
+
 }
-
-// string[] strShare_1_256 = File.ReadAllLines("../Files Go HERE/Share_1_256.txt");
-// string[] strShare_2_256 = File.ReadAllLines("../Files Go HERE/Share_2_256.txt");
-// string[] strShare_3_256= File.ReadAllLines("../Files Go HERE/Share_3_256.txt");
-
-// string[] strShare_1_2048 = File.ReadAllLines("../Files Go HERE/Share_1_2048.txt");
-// string[] strShare_2_2048 = File.ReadAllLines("../Files Go HERE/Share_2_2048.txt");
-// string[] strShare_3_2048 = File.ReadAllLines("../Files Go HERE/Share_3_2048.txt");
-
-
-// // Initialize a new integer list to hold the contents of the file in integer form
-// List<int> intShare_1_256 = new List<int>();
-// List<int> intShare_2_256 = new List<int>();
-// List<int> intShare_3_256 = new List<int>();
-
-// List<int> intShare_1_2048 = new List<int>();
-// List<int> intShare_2_2048 = new List<int>();
-

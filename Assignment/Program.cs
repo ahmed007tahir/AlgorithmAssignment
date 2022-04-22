@@ -10,7 +10,6 @@ List<int> intShare_2_2048 = ReadFile.Read_File("Share_2_2048.txt");
 List<int> intShare_3_2048 = ReadFile.Read_File("Share_3_2048.txt");
 
 
-
 int counter = 0;
 // // iterate through the strNumber list and assign each value to the list integerNumber
 // foreach (string num in strNumbers1)
@@ -39,12 +38,17 @@ int counter = 0;
 
 //  QuickSort.Quick_Sort_Descending(integerNumbers1,0,integerNumbers1.Count-1);
 
+//  foreach (int num in test)
+//  {
+//     Console.Write(num + " ");
+//  }
 
- foreach (int num in intShare_1_256)
- {
-    Console.Write(num + "(" + counter + ") ");
-    counter++;
- }
+
+//  foreach (int num in intShare_1_256)
+//  {
+//     Console.Write(num + "(" + counter + ") ");
+//     counter++;
+//  }
 
 // Console.WriteLine("\n");
 
@@ -57,12 +61,13 @@ int counter = 0;
 
 // Console.WriteLine("\n");
 
-// List<int> sorted2 = BubbleSort.BubbleSortDescending(integerNumbers2);
+BubbleSort.BubbleSortDescending(intShare_1_256);
+List<int> test = ReadFile.Get_Value(intShare_1_256);
 
-// foreach (int num in sorted2)
-// {
-//     Console.Write(num + " ");
-// }
+foreach (int num in test)
+{
+    Console.Write(num + " ");
+}
 
 // ///////////////////////////////////////////////////////////////////////////////////////////
 
