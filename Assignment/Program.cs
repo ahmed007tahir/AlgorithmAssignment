@@ -1,61 +1,55 @@
-﻿
-// make this more efficient plz
-
-// try converting the integers straight to int[] while reading the file
+﻿using Assignment;
 
 
-// Store the contents of 'File' into string[] strNumber
+// TASK 1: Read individual files into arrays
+List<int> intShare_1_256 = ReadFile.Read_File("Share_1_256.txt");
+List<int> intShare_2_256 = ReadFile.Read_File("Share_2_256.txt");
+List<int> intShare_3_256 = ReadFile.Read_File("Share_3_256.txt");
+List<int> intShare_1_2048 = ReadFile.Read_File("Share_1_2048.txt");
+List<int> intShare_2_2048 = ReadFile.Read_File("Share_2_2048.txt");
+List<int> intShare_3_2048 = ReadFile.Read_File("Share_3_2048.txt");
 
-using Assignment;
-
-string[] strNumbers1 = File.ReadAllLines("../Files Go HERE/Share_1_256.txt");
-string[] strNumbers2 = File.ReadAllLines("../Files Go HERE/Share_2_256.txt");
-string[] strNumbers3= File.ReadAllLines("../Files Go HERE/Share_3_256.txt");
-// Initialize a new integer list to hold the contents of the file in integer form
-List<int> integerNumbers1 = new List<int>();
-List<int> integerNumbers2 = new List<int>();
-List<int> integerNumbers3 = new List<int>();
 
 
 int counter = 0;
-// iterate through the strNumber list and assign each value to the list integerNumber
-foreach (string num in strNumbers1)
-{
-    integerNumbers1.Add(Int32.Parse(num));
-}
+// // iterate through the strNumber list and assign each value to the list integerNumber
+// foreach (string num in strNumbers1)
+// {
+//     integerNumbers1.Add(Int32.Parse(num));
+// }
 
-foreach (string num in strNumbers2)
-{
-    integerNumbers2.Add(Int32.Parse(num));
-}
+// foreach (string num in strNumbers2)
+// {
+//     integerNumbers2.Add(Int32.Parse(num));
+// }
 
-foreach (string num in strNumbers3)
-{
-    integerNumbers3.Add(Int32.Parse(num));
-}
+// foreach (string num in strNumbers3)
+// {
+//     integerNumbers3.Add(Int32.Parse(num));
+// }
 
- ///////////////////////////////////////////////////////////////////////////////////////////
+//  ///////////////////////////////////////////////////////////////////////////////////////////
  
- foreach (int num in integerNumbers1)
- {
-     Console.Write(num + " ");
- }
+//  foreach (int num in integerNumbers1)
+//  {
+//      Console.Write(num + " ");
+//  }
 
- Console.WriteLine("\n");
+//  Console.WriteLine("\n");
 
- QuickSort.Quick_Sort_Descending(integerNumbers1,0,integerNumbers1.Count-1);
+//  QuickSort.Quick_Sort_Descending(integerNumbers1,0,integerNumbers1.Count-1);
 
 
- foreach (int num in integerNumbers1)
+ foreach (int num in intShare_1_256)
  {
     Console.Write(num + "(" + counter + ") ");
     counter++;
  }
 
-Console.WriteLine("\n");
+// Console.WriteLine("\n");
 
-Console.WriteLine(LinearSearch.Linear_Search(integerNumbers1, 78));
-Console.WriteLine(BinarySearch.Binary_Search(integerNumbers1, 78));
+// Console.WriteLine(LinearSearch.Linear_Search(integerNumbers1, 32));
+// Console.WriteLine(BinarySearch.Binary_Search(integerNumbers1, 105));
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
