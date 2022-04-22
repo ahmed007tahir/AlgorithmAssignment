@@ -8,9 +8,9 @@
 
 using Assignment;
 
-string[] strNumbers1 = File.ReadAllLines("Files Go HERE/Share_1_256.txt");
-string[] strNumbers2 = File.ReadAllLines("Files Go HERE/Share_2_256.txt");
-string[] strNumbers3= File.ReadAllLines("Files Go HERE/Share_3_256.txt");
+string[] strNumbers1 = File.ReadAllLines("../Files Go HERE/Share_1_256.txt");
+string[] strNumbers2 = File.ReadAllLines("../Files Go HERE/Share_2_256.txt");
+string[] strNumbers3= File.ReadAllLines("../Files Go HERE/Share_3_256.txt");
 // Initialize a new integer list to hold the contents of the file in integer form
 List<int> integerNumbers1 = new List<int>();
 List<int> integerNumbers2 = new List<int>();
@@ -54,7 +54,7 @@ foreach (string num in strNumbers3)
  }
 
 Console.WriteLine(" ");
-Console.WriteLine(BinarySearch.Binary_Search(sorted1, 216));
+Console.WriteLine(BinarySearch.Binary_Search(sorted1, 102));
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 

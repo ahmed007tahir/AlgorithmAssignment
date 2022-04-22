@@ -10,24 +10,24 @@ namespace Assignment
     {
         public static int Binary_Search(List<int> list, int value)
         {
-            int lowerBound = 1;
-            int upperBound = list.Count;
+            int lowerBound = 0;
+            int upperBound = list.Count-1;
+            int midPoint = 0;
 
             while (lowerBound <= upperBound)
             {
-                int midPoint = (lowerBound + upperBound) / 2;
-                if (list[midPoint] > value)
+                midPoint = (lowerBound + upperBound) / 2;
+                if (value < list[midPoint])
                 {
                     upperBound = midPoint - 1;
                 }
-                else if (list[midPoint] < value)
+                else if (value > list[midPoint])
                 {
                     lowerBound = midPoint + 1;
                 }
                 else return midPoint;
             }
-            // get it to return the closest element to the value
-            return ;
+            return midPoint;
         }
     }
 }
