@@ -80,8 +80,15 @@ while (true)
         case "a":
         {
             BubbleSort.BubbleSortAscending(list);
-            List<int> somelist = ReadFile.Get_Value(list);
-            foreach (var item in somelist)
+            List<int> list_ascending = ReadFile.Get_Value(list);
+            foreach (var item in list_ascending)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("\n");
+            BubbleSort.BubbleSortDescending(list);
+            List<int> list_descending = ReadFile.Get_Value(list);
+            foreach (var item in list_descending)
             {
                 Console.Write(item + " ");
             }
@@ -89,9 +96,17 @@ while (true)
         }
         case "b":
         {
-            List<int> somelist = InsertionSort.InsertionSortAscending(list);
-            somelist = ReadFile.Get_Value(list);
-            foreach (var item in somelist)
+            List<int> list_ascending = InsertionSort.InsertionSortAscending(list);
+            list_ascending = ReadFile.Get_Value(list);
+            foreach (var item in list_ascending)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("\n");
+
+            List<int> list_descending = InsertionSort.InsertionSortDescending(list);
+            list_descending = ReadFile.Get_Value(list);
+            foreach (var item in list_descending)
             {
                 Console.Write(item + " ");
             }
@@ -99,9 +114,17 @@ while (true)
         }
         case "c":
         {
-            List<int> somelist = MergeSort.MergeSortAscending(list);
-            somelist = ReadFile.Get_Value(list);
-            foreach (var item in somelist)
+            List<int> list_ascending = MergeSort.MergeSortAscending(list);
+            list_ascending = ReadFile.Get_Value(list);
+            foreach (var item in list_ascending)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("\n");
+
+            List<int> list_descending = MergeSort.MergeSortDescending(list);
+            list_descending = ReadFile.Get_Value(list);
+            foreach (var item in list_descending)
             {
                 Console.Write(item + " ");
             }
@@ -110,8 +133,16 @@ while (true)
         case "d":
         {
             QuickSort.Quick_Sort_Ascending(list,0,list.Count-1);
-            List<int> somelist = ReadFile.Get_Value(list);
-            foreach (var item in somelist)
+            List<int> list_ascending = ReadFile.Get_Value(list);
+            foreach (var item in list_ascending)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine("\n");
+
+            QuickSort.Quick_Sort_Descending(list,0,list.Count-1);
+            List<int> list_descending = ReadFile.Get_Value(list);
+            foreach (var item in list_descending)
             {
                 Console.Write(item + " ");
             }
