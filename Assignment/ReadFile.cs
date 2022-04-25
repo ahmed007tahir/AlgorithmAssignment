@@ -4,7 +4,7 @@ public class ReadFile
 {
     public static List<int> Read_File(string filename)
     {
-        string[] strList = File.ReadAllLines("../Files Go HERE/" + filename);
+        string[] strList = File.ReadAllLines("Files Go HERE/" + filename);
         List<int> intList = new List<int>();
 
         foreach (string num in strList)

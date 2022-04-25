@@ -150,6 +150,16 @@ while (true)
         }
         case "e":
         {
+            int counter = 0;
+
+            foreach (var i in list)
+            {
+                Console.Write(i + "(" + counter + ") ");
+                counter++;
+            }
+            Console.Write("Type in the value: ");
+            int value = Int32.Parse(Console.ReadLine());
+            LinearSearch.Linear_Search(list, value);
             break;
         }
         case "f":
