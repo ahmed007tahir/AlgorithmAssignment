@@ -15,7 +15,7 @@ public class ReadFile
         return intList;
     }
 
-    public static List<int> Get_Value(List<int> list)
+    public static void Get_Value(List<int> list)
     {
         List<int> values = new List<int>();
 
@@ -33,7 +33,11 @@ public class ReadFile
                 values.Add(list[i]);
             }
         }
-        return values;
+
+        foreach (int value in values)
+        {
+            Console.Write(value + " ");
+        }
     }
 
 }

@@ -7,6 +7,7 @@ public class LinearSearch
         List<int> list_index = new List<int>();
         int smallest_difference = Math.Abs(list[0] - value);
         int index = 0;
+        
         for (int i=0; i < list.Count; i++)
         {
             // difference between the item in the list and the value user wants
@@ -30,11 +31,11 @@ public class LinearSearch
             list_index.Add(index);
         }
 
+        Console.Write("\nThe value " + value + " shows up at index: ");
 
         foreach (var num in list_index)
         {
-            Console.WriteLine(num);
-
+            Console.Write(num + ",");
         }
     }
 }

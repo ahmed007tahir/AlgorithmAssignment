@@ -2,31 +2,37 @@ namespace Assignment;
 
 public class BubbleSort
 {
-    public static void BubbleSortAscending(List<int> list)
+    public static List<int> BubbleSortAscending(List<int> unsortedList)
     {
-        for (int j = 0; j <= list.Count-2; j++)
+        List<int> sortedList = unsortedList.ToList();
+
+        for (int j = 0; j <= sortedList.Count-2; j++)
         {
-            for (int i = 0; i <= list.Count-2; i++)
+            for (int i = 0; i <= sortedList.Count-2; i++)
             {
-                if (list[i] > list[i+1])
+                if (sortedList[i] > sortedList[i+1])
                 {
-                    (list[i], list[i + 1]) = (list[i + 1], list[i]);
+                    (sortedList[i], sortedList[i + 1]) = (sortedList[i + 1], sortedList[i]);
                 }
             }
         }
+        return sortedList;
     }
     
-    public static void BubbleSortDescending(List<int> list)
+    public static List<int> BubbleSortDescending(List<int> unsortedList)
     {
-        for (int j = 0; j <= list.Count-2; j++)
+        List<int> sortedList = unsortedList.ToList();
+
+        for (int j = 0; j <= sortedList.Count-2; j++)
         {
-            for (int i = 0; i <= list.Count-2; i++)
+            for (int i = 0; i <= sortedList.Count-2; i++)
             {
-                if (list[i] < list[i+1])
+                if (sortedList[i] < sortedList[i+1])
                 {
-                    (list[i], list[i + 1]) = (list[i + 1], list[i]);
+                    (sortedList[i], sortedList[i + 1]) = (sortedList[i + 1], sortedList[i]);
                 }
             }
         }
+        return sortedList;
     }
 }

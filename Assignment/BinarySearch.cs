@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Assignment
+﻿namespace Assignment
 {
     internal class BinarySearch
     {
         public static int Binary_Search(List<int> list, int value)
         {
             int lowerBound = 0;
-            int upperBound = list.Count-1;
+            int upperBound = list.Count - 1;
             int midPoint = 0;
 
             while (lowerBound <= upperBound)

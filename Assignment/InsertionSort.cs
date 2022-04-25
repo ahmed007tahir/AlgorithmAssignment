@@ -2,33 +2,37 @@ namespace Assignment;
 
 public class InsertionSort
 {
-    public static List<int> InsertionSortAscending(List<int> list)
+    public static List<int> InsertionSortAscending(List<int> unsortedList)
     {
-        for (int i = 0; i <= list.Count - 2; i++)
+        List<int> sortedList = unsortedList.ToList();
+
+        for (int i = 0; i <= sortedList.Count - 2; i++)
         {
             for (int j = i + 1; j > 0; j--)
             {
-                if (list[j - 1] > list[j])
+                if (sortedList[j - 1] > sortedList[j])
                 {
-                    (list[j - 1], list[j]) = (list[j], list[j - 1]);
+                    (sortedList[j - 1], sortedList[j]) = (sortedList[j], sortedList[j - 1]);
                 }
             }
         }
-        return list;
+        return sortedList;
     }
     
-    public static List<int> InsertionSortDescending(List<int> list)
+    public static List<int> InsertionSortDescending(List<int> unsortedList)
     {
-        for (int i = 0; i <= list.Count - 2; i++)
+        List<int> sortedList = unsortedList.ToList();
+
+        for (int i = 0; i <= sortedList.Count - 2; i++)
         {
             for (int j = i + 1; j > 0; j--)
             {
-                if (list[j - 1] < list[j])
+                if (sortedList[j - 1] < sortedList[j])
                 {
-                    (list[j - 1], list[j]) = (list[j], list[j - 1]);
+                    (sortedList[j - 1], sortedList[j]) = (sortedList[j], sortedList[j - 1]);
                 }
             }
         }
-        return list;
+        return sortedList;
     }
 }

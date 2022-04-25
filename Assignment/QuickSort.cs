@@ -2,63 +2,61 @@ namespace Assignment;
 
 public class QuickSort
 {
-      public static void Quick_Sort_Ascending(List<int> list, int start, int end)
+  
+    public static void Quick_Sort_Ascending(List<int> unsortedList, int left, int right)
     {
-        if (start < end)
+        //If the left index is less than the right, the sort is not yet complete
+        if (left < right)
         {
-            int i = Partition_Ascending(list, start, end);
-    
-            Quick_Sort_Ascending(list, start, i - 1);
-            Quick_Sort_Ascending(list, i + 1, end);
-        }
-    }
- 
-    private static int Partition_Ascending(List<int> list, int start, int end)
-    {
-    int p = list[end];
-    int i = start - 1;
- 
-    for (int j = start; j <= end - 1; j++)
-    {
-        if (list[j] <= p)
-        {
-            i++;
-            (list[i] , list[j]) = (list[j] , list[i]);
-        }
-    }
+            //Take the element in the middle as a reference for comparison, move to the left less than it, move to the right greater than it
+            int middle = unsortedList[(left + right) / 2];
+            int i = left - 1;
+            int j = right + 1;
 
-    (list[i + 1] , list[end]) = (list[end] , list[i + 1]);
+            while (true)
+            {
+                while (unsortedList[++i] < middle && i < right)
+                    ; //Find elements smaller than the middle value from the left
+                while (unsortedList[--j] > middle && j > 0)
+                    ; //Find elements larger than the middle value from the right
 
-    return i + 1;
-    }
+                if (i >= j)
+                    break;
 
-    public static void Quick_Sort_Descending(List<int> list, int start, int end)
-    {
-        if (start < end)
-        {
-            int i = Partition_Ascending(list, start, end);
-    
-            Quick_Sort_Descending(list, start, i - 1);
-            Quick_Sort_Descending(list, i + 1, end);
-        }
-    }
- 
-    private static int Partition_Descending(List<int> list, int start, int end)
-    {
-    int p = list[end];
-    int i = start - 1;
- 
-    for (int j = start; j <= end - 1; j++)
-    {
-        if (list[j] >= p)
-        {
-            i++;
-            (list[i] , list[j]) = (list[j] , list[i]);
+                (unsortedList[i], unsortedList[j]) = (unsortedList[j], unsortedList[i]);
+            }
+
+            Quick_Sort_Ascending(unsortedList, left, i - 1);
+            Quick_Sort_Ascending(unsortedList, j + 1, right);
         }
     }
 
-    (list[i + 1] , list[end]) = (list[end] , list[i + 1]);
 
-    return i + 1;
+
+    public static void Quick_Sort_Descending(List<int> unsortedList, int left, int right)
+    {
+        //If the left index is less than the right, the sort is not yet complete
+        if (left < right)
+        {
+            int middle = unsortedList[(left + right) / 2];
+            int i = left - 1;
+            int j = right + 1;
+
+            while (true)
+            {
+                while (unsortedList[++i] > middle && i < right)
+                    ; 
+                while (unsortedList[--j] < middle && j > 0)
+                    ; 
+
+                if (i >= j)
+                    break;
+
+                (unsortedList[i], unsortedList[j]) = (unsortedList[j], unsortedList[i]);
+            }
+
+            Quick_Sort_Descending(unsortedList, left, i - 1);
+            Quick_Sort_Descending(unsortedList, j + 1, right);
+        }
     }
 }
