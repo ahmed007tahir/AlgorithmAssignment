@@ -9,6 +9,8 @@ List<int> intShare_3_256 = ReadFile.Read_File("Share_3_256.txt");
 List<int> intShare_1_2048 = ReadFile.Read_File("Share_1_2048.txt");
 List<int> intShare_2_2048 = ReadFile.Read_File("Share_2_2048.txt");
 List<int> intShare_3_2048 = ReadFile.Read_File("Share_3_2048.txt");
+List<int> task7part1 = ReadFile.Read_File("Share_1_256 & Share_3_256.txt");
+List<int> task7part2 = ReadFile.Read_File("Share_1_2048 & Share_3_2048.txt");
 
 List<int> list = new List<int>{};
 
@@ -20,6 +22,9 @@ List<int> list = new List<int>{};
        a) Share_1_256.txt      d) Share_1_2048.txt
        b) Share_2_256.txt      e) Share_2_2048.txt
        c) Share_3_256.txt      f) Share_3_2048.txt
+
+       x) Share_1_256 & Share_3_256
+       y) Share_1_2048 & Share_3_2048
     
     Your Response: ");
 
@@ -55,6 +60,16 @@ List<int> list = new List<int>{};
         case "f":
         {
             list = intShare_3_2048;
+            break;
+        }
+        case "x":
+        {
+            list = task7part1;
+            break;
+        }
+        case "y":
+        {
+            list = task7part2;
             break;
         }
         default:
