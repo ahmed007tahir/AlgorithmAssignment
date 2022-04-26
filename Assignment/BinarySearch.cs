@@ -2,8 +2,9 @@
 {
     internal class BinarySearch
     {
-        public static int Binary_Search(List<int> list, int value)
+        public static void Binary_Search(List<int> list, int value)
         {
+            int index;
             int lowerBound = 0;
             int upperBound = list.Count - 1;
             int midPoint = 0;
@@ -19,9 +20,25 @@
                 {
                     lowerBound = midPoint + 1;
                 }
-                else return midPoint;
+                else
+                {
+                    index = midPoint;
+                    break;
+                }
             }
-            return midPoint;
+
+            if (list[midPoint] != value)
+            {
+                Console.WriteLine("The number " + value + " does not exist within the list! The next closest number is " + list[midPoint] + " at index " + midPoint);
+            }
+            else
+            {
+                Console.Write("The value " + value + " occurs at index ");
+                for (int i = midPoint; list[i] == list[midPoint]; i++)
+                {
+                    Console.Write(i + " ");
+                }
+            }
         }
     }
 }

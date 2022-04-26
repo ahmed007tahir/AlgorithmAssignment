@@ -64,32 +64,43 @@ List<int> list = new List<int>{};
         }
     }
 
-Console.WriteLine("\nOriginal List:");
-ReadFile.Get_Value(list);
+list = BubbleSort.BubbleSortAscending(list);
 
-Console.WriteLine("\n\nBubble Sort Ascending:");
-ReadFile.Get_Value(BubbleSort.BubbleSortAscending(list));
+int index = 0;
+foreach (int item in list)
+{
+    Console.Write(item + "(" + index + ") ");
+    index++;
 
-Console.WriteLine("\n\nBubble Sort Descending:");
-ReadFile.Get_Value(BubbleSort.BubbleSortDescending(list));
+}
+BinarySearch.Binary_Search(list, 7);
 
-Console.WriteLine("\n\n\nInsertion Sort Ascending:");
-ReadFile.Get_Value(InsertionSort.InsertionSortAscending(list));
-
-Console.WriteLine("\n\nInsertion Sort Descending:");
-ReadFile.Get_Value(InsertionSort.InsertionSortDescending(list));
-
-Console.WriteLine("\n\n\nMerge Sort Ascending:");
-ReadFile.Get_Value(MergeSort.MergeSortAscending(list));
-
-Console.WriteLine("\n\nMerge Sort Descending:");
-ReadFile.Get_Value(MergeSort.MergeSortDescending(list));
-
-Console.WriteLine("\n\n\nQuick Sort Ascending:");
-QuickSort.Quick_Sort_Ascending(list, 0, list.Count-1);
-ReadFile.Get_Value(list);
-
-Console.WriteLine("\n\nQuick Sort Descending:");
-QuickSort.Quick_Sort_Descending(list, 0, list.Count - 1);
-ReadFile.Get_Value(list);
-
+// Console.WriteLine("\nOriginal List:");
+// ReadFile.Get_Value(list);
+//
+// Console.WriteLine("\n\nBubble Sort Ascending:");
+// ReadFile.Get_Value(BubbleSort.BubbleSortAscending(list));
+//
+// Console.WriteLine("\n\nBubble Sort Descending:");
+// ReadFile.Get_Value(BubbleSort.BubbleSortDescending(list));
+//
+// Console.WriteLine("\n\n\nInsertion Sort Ascending:");
+// ReadFile.Get_Value(InsertionSort.InsertionSortAscending(list));
+//
+// Console.WriteLine("\n\nInsertion Sort Descending:");
+// ReadFile.Get_Value(InsertionSort.InsertionSortDescending(list));
+//
+// Console.WriteLine("\n\n\nMerge Sort Ascending:");
+// ReadFile.Get_Value(MergeSort.MergeSortAscending(list));
+//
+// Console.WriteLine("\n\nMerge Sort Descending:");
+// ReadFile.Get_Value(MergeSort.MergeSortDescending(list));
+//
+// Console.WriteLine("\n\n\nQuick Sort Ascending:");
+// QuickSort.Quick_Sort_Ascending(list, 0, list.Count-1);
+// ReadFile.Get_Value(list);
+//
+// Console.WriteLine("\n\nQuick Sort Descending:");
+// QuickSort.Quick_Sort_Descending(list, 0, list.Count - 1);
+// ReadFile.Get_Value(list);
+//

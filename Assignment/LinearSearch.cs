@@ -6,6 +6,7 @@ public class LinearSearch
     {
         List<int> list_index = new List<int>();
         int smallest_difference = Math.Abs(list[0] - value);
+        int smallest_number = 0;
         int index = 0;
         
         for (int i=0; i < list.Count; i++)
@@ -17,18 +18,20 @@ public class LinearSearch
             {
                 list_index.Add(i);
             }
-            //we are looking for difference to be smallest
-            // we want to compare this iteration of difference to the smallest previous one
+            
+            // 
             else if (difference < smallest_difference)
             {
                 smallest_difference = difference;
+                smallest_number = list[i];
                 index = i;
             }
         }
 
+        // 
         if (list_index.Count == 0)
         {
-            list_index.Add(index);
+            Console.WriteLine("The number "+ value + " does not exist within the list! The next closest number is " + smallest_number + " at index" + index);
         }
 
         Console.Write("\nThe value " + value + " shows up at index: ");
