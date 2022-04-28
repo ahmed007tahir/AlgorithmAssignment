@@ -1,15 +1,16 @@
+using System.Diagnostics.Metrics;
+
 namespace Assignment;
 
 public class MergeSort
 {
-    public static List<int> MergeSortAscending(List<int> list, int counter = 0)
+    public static List<int> MergeSortAscending(List<int> list)
     {
         if (list.Count <= 1) //defining the base case
         {
-            counter++;
             return list;
         }
-        
+
         // Recursive case. First, divide the list into equal-sized sub-lists
         // consisting of the first half and second half of the list.
         List<int> leftSide = new List<int>(); //to hold the first half of the list
@@ -17,8 +18,7 @@ public class MergeSort
 
         for (int i = 0; i < list.Count; i++)
         {
-            counter++;
-
+            Counter.MergeSortAscending++;
             if (i < list.Count / 2)
             {
                 leftSide.Add(list[i]);
@@ -31,17 +31,17 @@ public class MergeSort
         // Recursively sort both sub-lists
         leftSide = MergeSortAscending(leftSide);
         rightSide = MergeSortAscending(rightSide);
-        
         // Then merge the now-sorted sub-lists
         return MergeAscending(leftSide, rightSide);
     }
 
-    private static List<int> MergeAscending(List<int> leftSide, List<int> rightSide)
+    private static List<int>  MergeAscending(List<int> leftSide, List<int> rightSide)
     {
         List<int> result = new List<int>();
 
         while (leftSide.Count > 0 && rightSide.Count > 0)
         {
+            Counter.MergeSortAscending++;
             if (leftSide[0] <= rightSide[0])
             {
                 result.Add(leftSide[0]);
@@ -59,11 +59,13 @@ public class MergeSort
 
         while (leftSide.Count > 0)
         {
+            Counter.MergeSortAscending++;
             result.Add(leftSide[0]);
             leftSide.RemoveAt(0);
         }
         while (rightSide.Count > 0)
         {
+            Counter.MergeSortAscending++;
             result.Add(rightSide[0]);
             rightSide.RemoveAt(0);
         }
@@ -85,6 +87,7 @@ public class MergeSort
 
         for (int i = 0; i < list.Count; i++)
         {
+            Counter.MergeSortDescending++;
             if (i < list.Count / 2)
             {
                 leftSide.Add(list[i]);
@@ -110,6 +113,7 @@ public class MergeSort
 
         while (leftSide.Count > 0 && rightSide.Count > 0)
         {
+            Counter.MergeSortDescending++;
             if (leftSide[0] >= rightSide[0])
             {
                 result.Add(leftSide[0]);
@@ -127,11 +131,13 @@ public class MergeSort
 
         while (leftSide.Count > 0)
         {
+            Counter.MergeSortDescending++;
             result.Add(leftSide[0]);
             leftSide.RemoveAt(0);
         }
         while (rightSide.Count > 0)
         {
+            Counter.MergeSortDescending++;
             result.Add(rightSide[0]);
             rightSide.RemoveAt(0);
         }

@@ -15,10 +15,13 @@ public class QuickSort
 
             while (true)
             {
+                Counter.QuickSortAscending++;
                 while (unsortedList[++i] < middle && i < right)
-                    ; //Find elements smaller than the middle value from the left
+                    Counter.QuickSortAscending++;
+                ; //Find elements smaller than the middle value from the left
                 while (unsortedList[--j] > middle && j > 0)
-                    ; //Find elements larger than the middle value from the right
+                    Counter.QuickSortAscending++;
+                ; //Find elements larger than the middle value from the right
 
                 if (i >= j)
                     break;
@@ -44,10 +47,14 @@ public class QuickSort
 
             while (true)
             {
+                Counter.QuickSortDescending++;
+
                 while (unsortedList[++i] > middle && i < right)
-                    ; 
+                    Counter.QuickSortDescending++;
+
                 while (unsortedList[--j] < middle && j > 0)
-                    ; 
+                    Counter.QuickSortDescending++;
+
 
                 if (i >= j)
                     break;
