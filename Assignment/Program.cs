@@ -230,6 +230,18 @@ while (true)
 
                     Console.WriteLine(@"
 
+█▀ █▀█ █▀█ ▀█▀ █▀▀ █▀▄   █░░ █ █▀ ▀█▀
+▄█ █▄█ █▀▄ ░█░ ██▄ █▄▀   █▄▄ █ ▄█ ░█░
+");
+                    int indexcounter = 0;
+                    foreach (int num in sortedList)
+                    {
+                        Console.Write(num + "[" + indexcounter + "] ");
+                        indexcounter++;
+                    }
+
+                    Console.WriteLine(@"
+
  █░░ █ █▄░█ █▀▀ ▄▀█ █▀█   █▀ █▀▀ ▄▀█ █▀█ █▀▀ █░█
  █▄▄ █ █░▀█ ██▄ █▀█ █▀▄   ▄█ ██▄ █▀█ █▀▄ █▄▄ █▀█
 ");
