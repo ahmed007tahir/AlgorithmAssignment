@@ -6,7 +6,7 @@ public class ReadFile
     public static List<int> Read_File(string filename)
     {
         // read file from the directory "Files GO Here" and storing them as a string array
-        string[] strList = File.ReadAllLines("../Files Go HERE/" + filename);
+        string[] strList = File.ReadAllLines("Files Go HERE/" + filename);
         
         // integer list to hold the contents of the file
         List<int> intList = new List<int>();
@@ -29,6 +29,7 @@ public class ReadFile
         // check the length of the list
         if (list.Count <= 256)
         {
+            Console.WriteLine("Displaying every 10th item:");
             // increment i by 10 to get every tenth value
             for (int i = 0; i < list.Count; i = i + 10)
             {
@@ -37,6 +38,7 @@ public class ReadFile
         }
         else if (list.Count > 256)
         {
+            Console.WriteLine("Displaying every 50th item:");
             // increment i by 10 to get every fiftieth value
             for (int i = 0; i < list.Count; i = i + 50)
             {

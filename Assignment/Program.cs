@@ -14,18 +14,23 @@ List<int> task7part2 = ReadFile.Read_File("Share_1_2048 & Share_3_2048.txt");
 
 List<int> list = new List<int> { };
 
-// get the user to choose the file
+Console.WriteLine(@"
+    ░██████╗░█████╗░██████╗░████████╗  ███╗░░██╗  ░██████╗███████╗░█████╗░██████╗░░█████╗░██╗░░██╗
+    ██╔════╝██╔══██╗██╔══██╗╚══██╔══╝  ████╗░██║  ██╔════╝██╔════╝██╔══██╗██╔══██╗██╔══██╗██║░░██║
+    ╚█████╗░██║░░██║██████╔╝░░░██║░░░  ██╔██╗██║  ╚█████╗░█████╗░░███████║██████╔╝██║░░╚═╝███████║
+    ░╚═══██╗██║░░██║██╔══██╗░░░██║░░░  ██║╚████║  ░╚═══██╗██╔══╝░░██╔══██║██╔══██╗██║░░██╗██╔══██║
+    ██████╔╝╚█████╔╝██║░░██║░░░██║░░░  ██║░╚███║  ██████╔╝███████╗██║░░██║██║░░██║╚█████╔╝██║░░██║
+    ╚═════╝░░╚════╝░╚═╝░░╚═╝░░░╚═╝░░░  ╚═╝░░╚══╝  ╚═════╝░╚══════╝╚═╝░░╚═╝╚═╝░░╚═╝░╚════╝░╚═╝░░╚═╝");
 while (true)
 {
     Console.Write(@"
-    Please choose the file you wish to search:
-       a) Share_1_256.txt      d) Share_1_2048.txt
-       b) Share_2_256.txt      e) Share_2_2048.txt
-       c) Share_3_256.txt      f) Share_3_2048.txt
 
-       x) Share_1_256 & Share_3_256
-       y) Share_1_2048 & Share_3_2048
-    
+    Please choose the file you wish to search:
+
+       a) Share_1_256.txt      d) Share_1_2048.txt       g) Share_1_256 & Share_3_256
+       b) Share_2_256.txt      e) Share_2_2048.txt       h) Share_1_2048 & Share_3_2048
+       c) Share_3_256.txt      f) Share_3_2048.txt       x) EXIT Program
+
     Your Response: ");
 
     string file_choice = Console.ReadLine();
@@ -62,74 +67,116 @@ while (true)
                 list = intShare_3_2048;
                 break;
             }
-        case "x":
+        case "g":
             {
                 list = task7part1;
                 break;
             }
-        case "y":
+        case "h":
             {
                 list = task7part2;
                 break;
             }
+        case "x":
+        {
+            Environment.Exit(0);
+            break;
+        }
         default:
             {
                 Console.WriteLine("Please try again!");
                 break;
             }
     }
-    list = BubbleSort.BubbleSortAscending(list);
 
-    int index = 0;
-    foreach (int item in list)
-    {
-        Console.Write(item + "(" + index + ") ");
-        index++;
-    }
-    BinarySearch.Binary_Search(list,80);
-
-    // list = BubbleSort.BubbleSortAscending(list);
-    
+    // list = MergeSort.MergeSortAscending(list);
+    //
     // int index = 0;
     // foreach (int item in list)
     // {
     //     Console.Write(item + "(" + index + ") ");
     //     index++;
-    
+    // }
+    // BinarySearch.Binary_Search(list,7);
+
+    // list = BubbleSort.BubbleSortAscending(list);
+
+    // int index = 0;
+    // foreach (int item in list)
+    // {
+    //     Console.Write(item + "(" + index + ") ");
+    //     index++;
+
     // }
 
     // BinarySearch.Binary_Search(list, 7);
 
-    // Console.WriteLine("\nOriginal List:");
-    // ReadFile.Get_Value(list);
-    // Console.WriteLine("\n----------------------------------------------------------------------------------------------------");
+    Console.WriteLine(@"
+    █▀█ █▀█ █ █▀▀ █ █▄░█ ▄▀█ █░░   █░░ █ █▀ ▀█▀ ▀
+    █▄█ █▀▄ █ █▄█ █ █░▀█ █▀█ █▄▄   █▄▄ █ ▄█ ░█░ ▄:
+");
+    ReadFile.Get_Value(list);
+    Console.WriteLine("\n\n========================================================================================================");
 
-    // Console.WriteLine("\n\nBubble Sort Ascending:");
-    // ReadFile.Get_Value(BubbleSort.BubbleSortAscending(list));
+    Console.WriteLine(@"
+ █▄▄ █░█ █▄▄ █▄▄ █░░ █▀▀   █▀ █▀█ █▀█ ▀█▀   ▄▀█ █▀ █▀▀ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀ ▀
+ █▄█ █▄█ █▄█ █▄█ █▄▄ ██▄   ▄█ █▄█ █▀▄ ░█░   █▀█ ▄█ █▄▄ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█ ▄
+");
+    ReadFile.Get_Value(BubbleSort.BubbleSortAscending(list));
 
-    // Console.WriteLine("\n\nBubble Sort Descending:");
-    // ReadFile.Get_Value(BubbleSort.BubbleSortDescending(list));
-    // Console.WriteLine("\n----------------------------------------------------------------------------------------------------");
+    Console.WriteLine(@"
+        
+ █▄▄ █░█ █▄▄ █▄▄ █░░ █▀▀   █▀ █▀█ █▀█ ▀█▀   █▀▄ █▀▀ █▀ █▀▀ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀ ▀
+ █▄█ █▄█ █▄█ █▄█ █▄▄ ██▄   ▄█ █▄█ █▀▄ ░█░   █▄▀ ██▄ ▄█ █▄▄ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█ ▄
+");
+    ReadFile.Get_Value(BubbleSort.BubbleSortDescending(list));
+    Console.WriteLine("\n\n========================================================================================================");
 
-    // Console.WriteLine("\n\n\nInsertion Sort Ascending:");
-    // ReadFile.Get_Value(InsertionSort.InsertionSortAscending(list));
+    Console.WriteLine(@"
+        
+ █ █▄░█ █▀ █▀▀ █▀█ ▀█▀ █ █▀█ █▄░█   █▀ █▀█ █▀█ ▀█▀   ▄▀█ █▀ █▀▀ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀ ▀
+ █ █░▀█ ▄█ ██▄ █▀▄ ░█░ █ █▄█ █░▀█   ▄█ █▄█ █▀▄ ░█░   █▀█ ▄█ █▄▄ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█ ▄
+");
+    ReadFile.Get_Value(InsertionSort.InsertionSortAscending(list));
 
-    // Console.WriteLine("\n\nInsertion Sort Descending:");
-    // ReadFile.Get_Value(InsertionSort.InsertionSortDescending(list));
-    // Console.WriteLine("\n----------------------------------------------------------------------------------------------------");
+    Console.WriteLine(@"
+        
+ █ █▄░█ █▀ █▀▀ █▀█ ▀█▀ █ █▀█ █▄░█   █▀ █▀█ █▀█ ▀█▀   █▀▄ █▀▀ █▀ █▀▀ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀ ▀
+ █ █░▀█ ▄█ ██▄ █▀▄ ░█░ █ █▄█ █░▀█   ▄█ █▄█ █▀▄ ░█░   █▄▀ ██▄ ▄█ █▄▄ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█ ▄
+");
+    ReadFile.Get_Value(InsertionSort.InsertionSortDescending(list));
+    Console.WriteLine("\n\n=======================================================================================================");
 
-    // Console.WriteLine("\n\n\nMerge Sort Ascending:");
-    // ReadFile.Get_Value(MergeSort.MergeSortAscending(list));
+    Console.WriteLine(@"
+        
+ █▀▄▀█ █▀▀ █▀█ █▀▀ █▀▀   █▀ █▀█ █▀█ ▀█▀   ▄▀█ █▀ █▀▀ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀ ▀
+ █░▀░█ ██▄ █▀▄ █▄█ ██▄   ▄█ █▄█ █▀▄ ░█░   █▀█ ▄█ █▄▄ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█ ▄
+");
+    ReadFile.Get_Value(MergeSort.MergeSortAscending(list));
 
-    // Console.WriteLine("\n\nMerge Sort Descending:");
-    // ReadFile.Get_Value(MergeSort.MergeSortDescending(list));
-    // Console.WriteLine("\n----------------------------------------------------------------------------------------------------");
+    Console.WriteLine(@"
+        
+ █▀▄▀█ █▀▀ █▀█ █▀▀ █▀▀   █▀ █▀█ █▀█ ▀█▀   █▀▄ █▀▀ █▀ █▀▀ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀ ▀
+ █░▀░█ ██▄ █▀▄ █▄█ ██▄   ▄█ █▄█ █▀▄ ░█░   █▄▀ ██▄ ▄█ █▄▄ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█ ▄
+");
+    ReadFile.Get_Value(MergeSort.MergeSortDescending(list));
+    Console.WriteLine("\n\n========================================================================================================");
 
-    // Console.WriteLine("\n\n\nQuick Sort Ascending:");
-    // QuickSort.Quick_Sort_Ascending(list, 0, list.Count - 1);
-    // ReadFile.Get_Value(list);
+    Console.WriteLine(@"
+        
+ █▀█ █░█ █ █▀▀ █▄▀   █▀ █▀█ █▀█ ▀█▀   ▄▀█ █▀ █▀▀ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀ ▀
+ ▀▀█ █▄█ █ █▄▄ █░█   ▄█ █▄█ █▀▄ ░█░   █▀█ ▄█ █▄▄ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█ ▄
+");
+    QuickSort.Quick_Sort_Ascending(list, 0, list.Count - 1);
+    ReadFile.Get_Value(list);
 
-    // Console.WriteLine("\n\nQuick Sort Descending:");
-    // QuickSort.Quick_Sort_Descending(list, 0, list.Count - 1);
-    // ReadFile.Get_Value(list);
+    Console.WriteLine(@"
+        
+ █▀█ █░█ █ █▀▀ █▄▀   █▀ █▀█ █▀█ ▀█▀   █▀▄ █▀▀ █▀ █▀▀ █▀▀ █▄░█ █▀▄ █ █▄░█ █▀▀ ▀
+ ▀▀█ █▄█ █ █▄▄ █░█   ▄█ █▄█ █▀▄ ░█░   █▄▀ ██▄ ▄█ █▄▄ ██▄ █░▀█ █▄▀ █ █░▀█ █▄█ ▄
+");
+    QuickSort.Quick_Sort_Descending(list, 0, list.Count - 1);
+    ReadFile.Get_Value(list);
+    Console.WriteLine("\n\n========================================================================================================");
+
 }

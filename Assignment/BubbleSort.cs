@@ -8,6 +8,9 @@ public class BubbleSort
     // This method takes in an unsorted list of integers as an argument and sorts the list in ascending order 
     public static List<int> BubbleSortAscending(List<int> unsortedList)
     {
+        // This variable keeps track of the number of steps taken by the program
+        int counter = 0;
+
         // This will hold a clone of the unsorted list, as not to change the original list
         List<int> sortedList = unsortedList.ToList();
 
@@ -22,9 +25,11 @@ public class BubbleSort
                 if (sortedList[i] > sortedList[i+1])
                 {
                     (sortedList[i], sortedList[i + 1]) = (sortedList[i + 1], sortedList[i]);
+                    counter++;
                 }
             }
         }
+        Console.WriteLine("The Bubble sort arranged the list in ascending order in " + counter + " steps.\n");
         return sortedList;
     }
     
@@ -32,6 +37,9 @@ public class BubbleSort
     // This method takes in an unsorted list of integers as an argument and sorts the list in descending order 
     public static List<int> BubbleSortDescending(List<int> unsortedList)
     {
+        // This variable keeps track of the number of steps taken by the program
+        int counter = 0;
+
         // This will hold a clone of the unsorted list, as not to change the original list
         List<int> sortedList = unsortedList.ToList();
 
@@ -47,9 +55,11 @@ public class BubbleSort
                 if (sortedList[i] < sortedList[i+1])
                 {
                     (sortedList[i], sortedList[i + 1]) = (sortedList[i + 1], sortedList[i]);
+                    counter++;
                 }
             }
         }
+        Console.WriteLine("The Bubble sort arranged the list in descending order in " + counter + " steps.\n");
         return sortedList;
     }
 }

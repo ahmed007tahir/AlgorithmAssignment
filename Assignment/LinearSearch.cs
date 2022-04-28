@@ -2,8 +2,8 @@ namespace Assignment;
 
 public class LinearSearch
 {
-    // This method takes in two arguments: an integer list & a integer 'value'
-    // It then iterates through the integer list comparing each item of the list with the integer 'value'
+    // This method takes in two arguments: an integer list & a integer 'value' and prints out the index of the value within the list
+    // This method iterates through the integer list comparing each item of the list with the integer 'value',
     // If the value exists inside the list, this method returns all the indices where the value occurred in the list
     // If the value does not exist inside the list, this method returns the index number and value of the item in the list, that is closest to the integer 'value'
     public static void Linear_Search(List<int> list, int value)
@@ -19,10 +19,14 @@ public class LinearSearch
         
         // this variable holds the index of the number closest to the desired number, given the desired number does not exist within the list
         int index = 0;
-        
+
+        // This variable keeps track of the number of steps taken by the program
+        int counter = 0;
+
         // this loop iterates through the list
         for (int i=0; i < list.Count; i++)
         {
+            counter++;
             // this variable holds the value of the numeric difference between the current list item and 'value' 
             int difference = Math.Abs(list[i] - value);
 
@@ -47,6 +51,8 @@ public class LinearSearch
         if (list_index.Count == 0)
         {
             Console.WriteLine("The number "+ value + " does not exist within the list! The next closest number is " + smallest_number + " at index" + index);
+            Console.WriteLine("This algorithm sorted the list in " + counter + " steps.");
+
         }
 
         // if the value is found, then all the indices where the value occurs within the list are printed
@@ -58,6 +64,7 @@ public class LinearSearch
             {
                 Console.Write(num + ",");
             }
+            Console.WriteLine("This algorithm sorted the list in " + counter + " steps.");
         }
     }
 }

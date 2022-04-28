@@ -2,10 +2,11 @@ namespace Assignment;
 
 public class MergeSort
 {
-    public static List<int> MergeSortAscending(List<int> list)
+    public static List<int> MergeSortAscending(List<int> list, int counter = 0)
     {
         if (list.Count <= 1) //defining the base case
         {
+            counter++;
             return list;
         }
         
@@ -16,6 +17,8 @@ public class MergeSort
 
         for (int i = 0; i < list.Count; i++)
         {
+            counter++;
+
             if (i < list.Count / 2)
             {
                 leftSide.Add(list[i]);
@@ -31,7 +34,6 @@ public class MergeSort
         
         // Then merge the now-sorted sub-lists
         return MergeAscending(leftSide, rightSide);
-
     }
 
     private static List<int> MergeAscending(List<int> leftSide, List<int> rightSide)
@@ -96,6 +98,7 @@ public class MergeSort
         leftSide = MergeSortDescending(leftSide);
         rightSide = MergeSortDescending(rightSide);
         
+
         // Then merge the now-sorted sublists
         return MergeDescending(leftSide, rightSide);
 
