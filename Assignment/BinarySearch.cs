@@ -60,7 +60,7 @@
                 {
                     Console.Write(i + " ");
                 }
-                Console.WriteLine("This algorithm sorted the list in " + counter + " steps.");
+                Console.WriteLine("\nIt took this algorithm " + counter + " steps to search through the list.");
 
             }
         }

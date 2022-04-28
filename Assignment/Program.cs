@@ -171,7 +171,7 @@ while (true)
 
                     string file_choice = Console.ReadLine();
 
-                    if (file_choice == "a") list = intShare_1_256;
+                    if (file_choice == "a") {list = intShare_1_256;break;}
                     else if (file_choice == "b")
                     {
                         list = intShare_2_256;
@@ -214,13 +214,37 @@ while (true)
                     }
                 }
 
-                Console.WriteLine("\nPlease enter a value u wish to search");
-                string input = Console.ReadLine();
-                int number;
-                Int32.TryParse(input, out number);
-                Console.Write("\nPlease enter a value u wish to search");
-                
+                while (true)
+                {
+                    Console.Write("\nPlease enter a value u wish to search: ");
+                    string input = Console.ReadLine();
+                    int number;
+                    Int32.TryParse(input, out number);
+                    if (!Int32.TryParse(input, out number))
+                    {
+                        Console.WriteLine("Invalid Input! Please Insert an Integer value!");
+                    }
 
+                    List<int> sortedList = list.ToList();
+                    sortedList = MergeSort.MergeSortAscending(list);
+
+                    Console.WriteLine(@"
+
+ █░░ █ █▄░█ █▀▀ ▄▀█ █▀█   █▀ █▀▀ ▄▀█ █▀█ █▀▀ █░█
+ █▄▄ █ █░▀█ ██▄ █▀█ █▀▄   ▄█ ██▄ █▀█ █▀▄ █▄▄ █▀█
+");
+                    LinearSearch.Linear_Search(sortedList, number);
+
+                    Console.WriteLine(@"
+
+
+ █▄▄ █ █▄░█ ▄▀█ █▀█ █▄█   █▀ █▀▀ ▄▀█ █▀█ █▀▀ █░█
+ █▄█ █ █░▀█ █▀█ █▀▄ ░█░   ▄█ ██▄ █▀█ █▀▄ █▄▄ █▀█
+");
+
+                    BinarySearch.Binary_Search(sortedList, number);
+                    break;
+                }
 
 
             }

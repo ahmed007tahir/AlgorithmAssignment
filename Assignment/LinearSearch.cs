@@ -50,7 +50,7 @@ public class LinearSearch
         // if not found, the value and the index of the value closest will be printed
         if (list_index.Count == 0)
         {
-            Console.WriteLine("The number "+ value + " does not exist within the list! The next closest number is " + smallest_number + " at index" + index);
+            Console.WriteLine("The number "+ value + " does not exist within the list! The next closest number is " + smallest_number + " at index: " + index);
             Console.WriteLine("This algorithm sorted the list in " + counter + " steps.");
 
         }
@@ -58,13 +58,13 @@ public class LinearSearch
         // if the value is found, then all the indices where the value occurs within the list are printed
         else
         {
-            Console.Write("\nThe value " + value + " shows up at index: ");
+            Console.Write("\nThe value " + value + " shows up at index ");
 
             foreach (var num in list_index)
             {
-                Console.Write(num + ",");
+                Console.Write(num + " ");
             }
-            Console.WriteLine("This algorithm sorted the list in " + counter + " steps.");
+            Console.WriteLine("\nIt took this algorithm " + counter + " steps to search through the list.");
         }
     }
 }
