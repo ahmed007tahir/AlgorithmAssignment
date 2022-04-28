@@ -6,7 +6,7 @@ public class ReadFile
     public static List<int> Read_File(string filename)
     {
         // read file from the directory "Files GO Here" and storing them as a string array
-        string[] strList = File.ReadAllLines("Files Go HERE/" + filename);
+        string[] strList = File.ReadAllLines("../Files Go HERE/" + filename);
         
         // integer list to hold the contents of the file
         List<int> intList = new List<int>();

@@ -34,11 +34,12 @@
             else
             {
                 Console.Write("The value " + value + " occurs at index ");
-                for (int i = midPoint; list[i] == list[midPoint]; i--)
+                for (int i = midPoint - 1; list[i] == list[midPoint]; i--)
                 {
                     Console.Write(i + " ");
                 }
-                for (int i = midPoint; list[i] == list[midPoint]; i++)
+                Console.Write(midPoint + " ");
+                for (int i = midPoint + 1; list[i] == list[midPoint]; i++)
                 {
                     Console.Write(i + " ");
                 }
